@@ -6,6 +6,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { ProductComponent } from './product/product.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { MembershipComponent } from './membership/membership.component';
+import { DirectoryComponent } from './directory/directory.component';
+import { MatrimonialComponent } from './matrimonial/matrimonial.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 @NgModule({
@@ -14,18 +20,39 @@ import { ProductComponent } from './product/product.component';
      FormsModule,
      HttpModule,
      RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: "/home",
+        pathMatch: 'full'
+      },
        {
-       path:  'member',
-       component: MembersComponent
+       path:  'home',
+       component: HomeComponent
      },
      {
-       path:  'product',
-       component:ProductComponent
+       path:  'aboutus',
+       component:AboutusComponent
+     },
+     {
+       path:  'membership',
+       component:MembershipComponent
+     },
+     {
+       path:  'directory',
+       component:DirectoryComponent
+     },
+     {
+       path:  'matrimonial',
+       component:MatrimonialComponent
+     },
+     {
+       path:  'contactus',
+       component:ContactusComponent
      }
     ])
     ],
     providers:[],
-  declarations: [ AppComponent, ProductComponent, MembersComponent],
+  declarations: [ AppComponent, ProductComponent, MembersComponent, HomeComponent, AboutusComponent, MembershipComponent, DirectoryComponent, MatrimonialComponent, ContactusComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
